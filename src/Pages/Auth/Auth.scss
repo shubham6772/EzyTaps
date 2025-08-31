@@ -1,0 +1,51 @@
+@use "../../theme/Theme.scss";
+
+.auth-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); // subtract header height
+    width: 100vw;
+    padding: 2rem 0;
+    box-sizing: border-box;
+    overflow-y: auto; // allow scrolling if form still taller
+
+
+
+    .auth-form-card {
+        width: 500px;
+        max-width: 90%;
+        padding: 2rem;
+        box-sizing: border-box;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        background-color: var(--background-clr);
+        border-radius: 20px;
+
+        .login-form-title-container {
+            margin: 10px 0px;
+            align-self: flex-start;
+            font-weight: 500;
+            font-size: 1.5rem;
+
+            .sinup-toggle-msg{
+                font-size: 12px;
+                color: var(--gray-btn-bg);
+
+                span{
+                    color: var(--color-primary);
+                    cursor: pointer;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .submit-btn {
+            border-radius: 5px;
+        }
+    }
+
+}

@@ -1,0 +1,75 @@
+@use "../../theme/Theme.scss";
+
+.converter-input-bar-container {
+
+    width: 100%;
+    margin: 10px 0px;
+
+    .converter-input-bar-and-label-container {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+
+
+        .converter-input-bar-text-label {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .converter-textfield {
+            width: 100%;
+
+            // input outline
+            .MuiOutlinedInput-root {
+                fieldset {
+                    border-color: var(--color-border); // default
+                }
+
+                &:hover fieldset {
+                    border-color: var(--main-theme-clr); // hover
+                }
+
+                &.Mui-focused fieldset {
+                    border-color: var(--main-theme-clr); // focused
+                }
+
+                .MuiInputBase-input {
+                    color: var(--color); // typed text color
+                }
+            }
+
+            // label text
+            .MuiInputLabel-root {
+                color: gray;
+
+                &.Mui-focused {
+                    color: var(--main-theme-clr);
+                }
+            }
+        }
+
+    }
+
+    .converter-input-bar-end-icon {
+        display: flex;
+        align-items: center;
+
+        .MuiSvgIcon-root {
+            color: var(--main-theme-clr);
+            font-size: 22px; 
+        }
+
+    }
+
+    .clickable-icon{
+        cursor: pointer;
+    }
+
+
+
+}

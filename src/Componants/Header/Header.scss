@@ -1,0 +1,39 @@
+@use "../../theme/Theme.scss";
+
+.header-container {
+  background-color: var(--color-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: box-shadow 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
+
+
+  &.scrolled {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--background-clr);
+  }
+
+  .header-brand-name {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--main-theme-clr);
+  }
+
+  .header-buttons {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .full-width{
+      width: 125px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "./theme/Theme.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--color); /* use theme color for all text */
+}
+
+html, body {
+  background-color: var(--color-bg); /* main background */
+  transition: background-color 0.3s ease, color 0.3s ease; /* smooth theme change */
+  font-size: 16px;
+}
+
+/* Optional: ensure inputs, buttons, and placeholders follow theme too */
+input, textarea, select, button {
+  color: var(--color);
+}
+
+::placeholder {
+  color: var(--color);
+  opacity: 0.6;
+}
+
+/* Give enough space so content starts below fixed header */
+.page-content {
+  padding-top: 80px; /* header height + padding */
+  background-color: var(--color-bg); /* same as header */
+  transition: background-color 0.3s ease;
+  min-height: 100vh; /* ensure full-page background */
+}
+

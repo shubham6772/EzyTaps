@@ -1,0 +1,47 @@
+/* theme.scss */
+
+/* ------------------- Global Constant ---------------- */
+:root{
+  --gray-btn-bg : #8796a5;
+  --main-theme-clr : #FFC107;
+  --background-container-clr: #031f39;
+  --background-container-clr-soft: #0d2f4e;
+  --black-rgb: 0, 0, 0;
+  --shadow-rgb: 0, 0, 0;
+  --background-clr : #f7f4ee;
+  --btn-fill-clr : #0058dd;
+  --btn-fill-clr-hover : #0056b3;
+  
+;
+}
+
+/* ---------------- Light Theme ---------------- */
+:root {
+  --color : #121212;
+  --color-bg: #eeeeee;          /* main background */
+  --color-surface: #F8F9FA;     /* cards, panels */
+  --color-text-primary: #1F1F1F;/* main text */
+  --color-text-secondary: #555555; /* secondary text */
+  --color-primary: #4B6CB7;     /* buttons, highlights */
+  --color-accent: #FF6B6B;      /* badges, small accents */
+  --color-border: #E0E0E0;      /* borders, dividers */
+  --color-success: #28A745;     /* success indicators */
+  --color-warning: #FFC107;     /* warnings, highlights */
+}
+
+/* ---------------- Dark Theme ---------------- */
+[data-theme="dark"] {
+  --color : #FFFFFF;
+  --color-bg: #121212;          /* main background */
+  --color-surface: #1E1E1E;     /* cards, panels */
+  --color-text-primary: #EAEAEA;/* main text */
+  --color-text-secondary: #AAAAAA; /* secondary text */
+  --color-primary: #4B6CB7;     /* buttons, highlights (same as light) */
+  --color-accent: #FF6B6B;      /* badges, accents */
+  --color-border: #FFFFFF;      /* borders, dividers */
+  --color-success: #28A745;     /* success indicators */
+  --color-warning: #FFC107;     /* warnings, highlights */
+}
+
+
+

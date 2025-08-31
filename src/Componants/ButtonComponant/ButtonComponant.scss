@@ -1,0 +1,74 @@
+.custom-btn-componant {
+
+    // style the MUI Button itself
+    &.MuiButton-root {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        font-weight: 700;
+        border-radius: 50px;
+        text-transform: none;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        background-color: var(--btn-fill-clr);
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        &:hover {
+            background-color: var(--btn-fill-clr-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    // outlined variant
+    &.MuiButton-outlined {
+        border: 2px solid var(--btn-fill-clr);
+        color: var(--btn-fill-clr);
+        background-color: transparent;
+
+        &:hover {
+            border-color: var(--btn-fill-clr-hover);
+            color: var(--btn-fill-clr-hover);
+            background-color: rgba(0, 88, 221, 0.05);
+        }
+    }
+
+    // contained variant
+    &.MuiButton-contained {
+        background-color: var(--btn-fill-clr);
+        color: var(--background-clr);
+
+        &:hover {
+            background-color: var(--btn-fill-clr-hover);
+        }
+    }
+
+    /* ✅ Fix for icons */
+    .MuiSvgIcon-root {
+        color: #fff !important;
+        fill: #fff !important;
+        font-size: 22px;
+    }
+
+    .MuiButton-endIcon,
+    .MuiButton-startIcon {
+        margin-left: 8px;
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    &.small {
+        padding: 3px 0px 3px 15px;
+    }
+
+    &.large {
+        padding: 10px 20px;
+    }
+}
