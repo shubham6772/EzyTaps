@@ -1,48 +1,50 @@
 @use "../../../theme/Theme.scss";
 
-.signup-form-container{
+.signup-form-container {
     width: auto;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: auto;
 
-    .signup-form-title{
+    .signup-form-title {
         font-weight: 600;
         font-size: 1.5rem;
     }
 
-    .signup-form-inputs{
+    .signup-form-inputs {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         // height: 160px;
         margin: 30px 0px;
 
-        .signup-form-password-container{
+        .signup-form-password-container {
 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            .forget-password-btn{
+            .forget-password-btn {
                 align-self: flex-end;
                 font-size: 0.8rem;
                 color: var(--color-primary);
                 margin-top: 5px;
                 cursor: pointer;
 
-                &:hover{
+                &:hover {
                     text-decoration: underline;
                 }
             }
         }
     }
 
-    .submit-button{
+    .submit-button {
         width: 100%;
 
-        
+
     }
+
+
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { HeaderPropsModel } from "../../../types/componants/header/Header"
 import "./Header.scss"
 
-const Header: React.FC<HeaderPropsModel> = ({ brandName, buttons }) => {
+const Header: React.FC<HeaderPropsModel> = ({ brandName, buttons, customClass }) => {
 
     const [scrolled, setScrolled] = useState(false);
 
@@ -23,7 +23,7 @@ const Header: React.FC<HeaderPropsModel> = ({ brandName, buttons }) => {
     }, []);
 
     return (
-        <div className={`header-container ${scrolled ? "scrolled" : ""}`}>
+        <div className={`header-container ${scrolled ? "scrolled" : ""} ${customClass}`}>
             <div className="header-brand-name">
                 {brandName}
             </div>

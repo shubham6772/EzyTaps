@@ -7,15 +7,16 @@ import ArrowForwardIosRounded from "@mui/icons-material/ArrowForwardIosRounded";
 import useNavigationHook from "../../Redux/Hooks/navigationHook";
 import { Outlet } from "react-router-dom";
 import { KeyMapper } from "../../KeyMapper/KeyMapper";
+import { useAppSelector } from "../../Redux/Hooks/hooks";
 
-function Layout() {
+function RootLayout() {
     const [theme, setTheme] = useState<"light" | "dark">(() => {
         const stored = localStorage.getItem("theme");
         return (stored === "light" || stored === "dark") ? stored : "light";
     });
 
-
     const { goTo } = useNavigationHook();
+
     const handleSignupClick = useCallback(() => {
         goTo(KeyMapper.Pages.Auth)
     }, [goTo])
@@ -29,9 +30,15 @@ function Layout() {
         setTheme(prev => (prev === "light" ? "dark" : "light"));
     }, []);
 
+    const isAuthPage = location.pathname === KeyMapper.Pages.Auth;
+    const { isAuthenticated } = useAppSelector((state) => state.AuthSlice);
+    const isDashboardPage = location.pathname === KeyMapper.Pages.Dashboard;
+
     return (
-        <>
+        <div className="layout-main-container">
+            {/* <div className="main-layout-content-container"></div> */}
             <Header
+                customClass={isDashboardPage ? "underline" : ""}
                 brandName={Config.brandName}
                 buttons={[
                     <MaterialUISwitch
@@ -39,22 +46,22 @@ function Layout() {
                         checked={theme === "dark"}
                         onChange={toggleTheme}
                     />,
-                    <ButtonComponant
+                    (!isAuthPage && !isAuthenticated) && (<ButtonComponant
                         customClassName="full-width"
                         key="signup-button"
                         type="contained"
-                        text="Sign Up"
+                        text={"Sign In"}
                         size="small"
                         endIcon={<ArrowForwardIosRounded />}
                         clickHandler={handleSignupClick}
-                    />
+                    />)
                 ]}
             />
             <main>
                 <Outlet />
             </main>
-        </>
+        </div>
     );
 }
 
-export default Layout;
+export default RootLayout;

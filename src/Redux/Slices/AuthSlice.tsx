@@ -2,7 +2,7 @@ import { createSlice} from "@reduxjs/toolkit";
 import type {AuthInitialStateModel} from "../../../types/slices/AuthSliceModel"
 
 const initialState  : AuthInitialStateModel  = {
-    isAuthenticated : false,
+    isAuthenticated : true,
     isLoggedInPage  : true
 }
 

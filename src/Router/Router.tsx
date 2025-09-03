@@ -3,26 +3,32 @@ import Dashboard from '../Pages/Dashboard/Dashboard';
 import Landing from '../Pages/Landing/Landing';
 import Auth from '../Pages/Auth/Auth';
 import { KeyMapper } from '../KeyMapper/KeyMapper';
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from '../Guards/ProtectedRoute';
 import Error from '../Pages/Error/Error';
 import Pricing from '../Pages/Pricing/Pricing';
-import Layout from '../Utils/Layout/Layout';
+import Layout from '../Utils/Layouts/RootLayout';
+import AuthGuard from '../Guards/AuthGuard';
+import { DashboardRoutes } from './DashboardRouter/DashboardRouter';
+import DashboardLayout from '../Utils/Layouts/DashboardLayout/DashboardLayout';
 
 const Router = () => {
 
   const routeConfig = createBrowserRouter([
 
     {
-      element: <Layout />,
-      // path : KeyMapper.Pages.Landing,
+      element:
+        <AuthGuard>
+          <Layout />
+        </AuthGuard>,
       children: [
         {
           path: KeyMapper.Pages.Dashboard,
           element: (
             <ProtectedRoute>
-              <Dashboard />
+              <DashboardLayout />
             </ProtectedRoute>
-          )
+          ),
+          children: DashboardRoutes
         },
         {
           path: KeyMapper.Pages.Landing,

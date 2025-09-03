@@ -45,10 +45,10 @@ const SignUp = () => {
           <ConverterInputBar label="Username/Email *" value={username} handleChange={handleUsernameChange} endIcon={icons.EmailIcon} />
         </div>
         <div className="signup-form-username-container">
-          <ConverterInputBar label="Password *" value={username} handleChange={handleUsernameChange} endIcon={icons.VisibilityIcon} />
+          <ConverterInputBar label="Password *" value={password} handleChange={handlePasswordChange} endIcon={icons.VisibilityIcon} />
         </div>
         <div className="signup-form-username-container">
-          <ConverterInputBar label="Phone *" value={username} handleChange={handleUsernameChange} endIcon={icons.AddCallIcon} startIcon={icons.AddCallIcon} />
+          <ConverterInputBar label="Phone *" value={username} handleChange={handleUsernameChange} endIcon={icons.AddCallIcon} />
         </div>
       </div>
       <div className="submit-button">

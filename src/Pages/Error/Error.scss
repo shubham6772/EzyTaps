@@ -1,0 +1,18 @@
+.error-wrapper {
+    position: fixed;
+    top: 80px;                  /* push below header */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 80px); /* subtract header height */
+    display: flex;
+    justify-content: center;    /* center horizontally */
+    align-items: center;        /* center vertically */
+    overflow: hidden;          /* optional background */
+}
+
+.error-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+    object-fit: contain;
+}

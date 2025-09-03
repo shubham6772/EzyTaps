@@ -1,8 +1,12 @@
+import photo from "../../assets/Err.webp";
+import "./Error.scss";
 
 const Error = () => {
   return (
-    <div>Error</div>
-  )
-}
+    <div className="error-wrapper">
+      <img src={photo} alt="Error" className="error-img" />
+    </div>
+  );
+};
 
-export default Error
+export default Error;

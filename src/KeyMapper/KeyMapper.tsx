@@ -7,7 +7,13 @@ export const KeyMapper = {
         Landing     : "/",
         Error       : "*",
         Pricing     : "/pricing",
+    },
+
+    DashboardChild : {
+        root : "/"
     }
+
+
 
 
 

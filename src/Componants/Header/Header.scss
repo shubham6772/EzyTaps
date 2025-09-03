@@ -9,7 +9,7 @@
   z-index: 100;
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   transition: box-shadow 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
 
@@ -36,4 +36,8 @@
       width: 125px;
     }
   }
+}
+
+.underline{
+  border-bottom: 1px solid var(--gray-btn-bg);
 }
