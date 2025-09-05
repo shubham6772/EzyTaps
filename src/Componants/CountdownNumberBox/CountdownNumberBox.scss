@@ -1,0 +1,30 @@
+@use "../../theme/Theme.scss";
+
+.counter-number-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    border : 1px solid var(--static-color-rgba);
+
+    // box-shadow: 4px 0 8px rgba(var(--shadow-rgb), 0.2),
+    //   -4px 0 8px rgba(var(--shadow-rgb), 0.2),
+    //   0 4px 8px rgba(var(--shadow-rgb), 0.2);
+
+    .counter-number-label{
+        // color: var(--gray-btn-bg);
+        
+        text-transform: capitalize;
+        font-size: .9rem;
+        font-weight: 500;
+    }
+
+    .counter-number{
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--main-theme-clr);
+    }
+}

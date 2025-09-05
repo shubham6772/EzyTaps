@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
-// import { toggleLoader } from "../slices/LoaderSlice/LoaderSlice";
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "./hooks";
-import { toggleLoader } from "../Slices/ComponantsSlices/LoaderSlice";
 
 function useNavigationHook() {
     const navigate = useNavigate();
@@ -11,29 +9,36 @@ function useNavigationHook() {
 
     useEffect(() => {
         if (navigation) {
-            dispatch(toggleLoader());
+            // dispatch(toggleLoader());
 
-            const loaderTimeout = setTimeout(() => {
-                dispatch(toggleLoader());
+            // const loaderTimeout = setTimeout(() => {
+                // dispatch(toggleLoader());
 
-                const navigateTimeout = setTimeout(() => {
+                // const navigateTimeout = setTimeout(() => {
                     if (typeof navigation.path === "string") {
                         navigate(navigation.path, { replace: navigation.replace });
                     } else {
                         navigate(navigation.path); // back/forward
                     }
                     setNavigation(null);
-                }, 50);
+                // }, 50);
 
-                return () => clearTimeout(navigateTimeout);
-            }, 500);
+                // return () => clearTimeout(navigateTimeout);
+            // }, 500);
 
-            return () => clearTimeout(loaderTimeout);
+            // return () => clearTimeout(loaderTimeout);
         }
     }, [navigation, dispatch, navigate]);
 
     const navigateWithLoader = (path: string | number, replace: boolean = false) => {
+        if (typeof path === "string" && /^https?:\/\//.test(path)) {
+            window.open(path, "_blank"); // open external link in new tab
+            return;
+        }
+
         setNavigation({ path, replace });
+
+
     };
 
     return {

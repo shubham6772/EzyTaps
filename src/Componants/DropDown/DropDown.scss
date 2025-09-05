@@ -1,0 +1,50 @@
+@use "../../theme/Theme.scss";
+
+.dropdown-container {
+    width: 100%;
+
+    .dropdown-select {
+        background-color: var(--color-surface);
+        border-radius: 6px;
+
+        .MuiSelect-select {
+            padding: 15px 12px;
+            font-size: 1rem;
+        }
+
+        // Default border color
+        .MuiOutlinedInput-notchedOutline {
+            border-color: var(--gray-btn-bg);
+        }
+
+        // Hover (but not focused yet)
+        &:hover .MuiOutlinedInput-notchedOutline {
+            border-color: var(--main-theme-clr);
+        }
+
+        // Focused (selected)
+        &.Mui-focused .MuiOutlinedInput-notchedOutline {
+            border-color: var(--main-theme-clr);
+        }
+    }
+
+    // Label styles
+    .MuiInputLabel-root {
+        font-size: 14px;
+        color: var(--gray-btn-bg); // default color
+
+        &.Mui-focused {
+            color: var(--main-theme-clr); // active/focused
+        }
+    }
+
+    .MuiMenuItem-root {
+        font-size: 14px;
+    }
+}
+
+.dropdown-label-text {
+    padding: 15px 0px;
+    font-weight: 500;
+    font-size: 1.25rem;
+}

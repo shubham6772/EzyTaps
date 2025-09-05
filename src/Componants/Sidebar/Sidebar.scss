@@ -1,0 +1,20 @@
+.sidebar-button-list-container {
+  display: flex;
+  flex-direction: column;  // stack top + bottom
+  justify-content: space-between; // pushes list to top, hr to bottom
+  height: 100%; // full height sidebar
+}
+
+.sidebar-button-list {
+  display: flex;
+  flex-direction: column; // ensures buttons stack vertically
+}
+
+.sidebar-button-end {
+  width: 100%; // makes <hr /> span full width
+  hr {
+    border: none;
+    border-top: 1px solid var(--static-color-rgba);
+    margin: 0;
+  }
+}

@@ -1,108 +1,54 @@
+import CounterdownNumberBox from "../../Componants/CountdownNumberBox/CountdownNumberBox"
+import LineChart from "../../Componants/Charts/LineChart/LineChart";
+import { useAppSelector } from "../../Redux/Hooks/hooks";
+import { BarChartDataCountry, BarChartDataState, deviceTrafficData, LineChartData, polarData } from "../../data/ChartData";
+import BarChart from "../../Componants/Charts/BarChart/BarChart";
+import PolarAreaChart from "../../Componants/Charts/PolarAreaChart/PolarAreaChart";
+import DoughnutChart from "../../Componants/Charts/DonutChart/DoughnutChart";
+
+import "./Dashboard.scss";
 
 const Dashboard = () => {
+
+  const { isDarkTheme } = useAppSelector((state) => state.ThemeSlice);
+
   return (
-    <>
-      <div>abc-1</div>
-      <div>abc-2</div>
-      <div>abc-3</div>
-      <div>abc-4</div>
-      <div>abc-5</div>
-      <div>abc-6</div>
-      <div>abc-7</div>
-      <div>abc-8</div>
-      <div>abc-9</div>
-      <div>abc-10</div>
-      <div>abc-11</div>
-      <div>abc-12</div>
-      <div>abc-13</div>
-      <div>abc-14</div>
-      <div>abc-15</div>
-      <div>abc-16</div>
-      <div>abc-17</div>
-      <div>abc-18</div>
-      <div>abc-19</div>
-      <div>abc-20</div>
-      <div>abc-21</div>
-      <div>abc-22</div>
-      <div>abc-23</div>
-      <div>abc-24</div>
-      <div>abc-25</div>
-      <div>abc-26</div>
-      <div>abc-27</div>
-      <div>abc-28</div>
-      <div>abc-29</div>
-      <div>abc-30</div>
-      <div>abc-31</div>
-      <div>abc-32</div>
-      <div>abc-33</div>
-      <div>abc-34</div>
-      <div>abc-35</div>
-      <div>abc-36</div>
-      <div>abc-37</div>
-      <div>abc-38</div>
-      <div>abc-39</div>
-      <div>abc-40</div>
-      <div>abc-41</div>
-      <div>abc-42</div>
-      <div>abc-43</div>
-      <div>abc-44</div>
-      <div>abc-45</div>
-      <div>abc-46</div>
-      <div>abc-47</div>
-      <div>abc-48</div>
-      <div>abc-49</div>
-      <div>abc-50</div>
-      <div>abc-51</div>
-      <div>abc-52</div>
-      <div>abc-53</div>
-      <div>abc-54</div>
-      <div>abc-55</div>
-      <div>abc-56</div>
-      <div>abc-57</div>
-      <div>abc-58</div>
-      <div>abc-59</div>
-      <div>abc-60</div>
-      <div>abc-61</div>
-      <div>abc-62</div>
-      <div>abc-63</div>
-      <div>abc-64</div>
-      <div>abc-65</div>
-      <div>abc-66</div>
-      <div>abc-67</div>
-      <div>abc-68</div>
-      <div>abc-69</div>
-      <div>abc-70</div>
-      <div>abc-71</div>
-      <div>abc-72</div>
-      <div>abc-73</div>
-      <div>abc-74</div>
-      <div>abc-75</div>
-      <div>abc-76</div>
-      <div>abc-77</div>
-      <div>abc-78</div>
-      <div>abc-79</div>
-      <div>abc-80</div>
-      <div>abc-81</div>
-      <div>abc-82</div>
-      <div>abc-83</div>
-      <div>abc-84</div>
-      <div>abc-85</div>
-      <div>abc-86</div>
-      <div>abc-87</div>
-      <div>abc-88</div>
-      <div>abc-89</div>
-      <div>abc-90</div>
-      <div>abc-91</div>
-      <div>abc-92</div>
-      <div>abc-93</div>
-      <div>abc-94</div>
-      <div>abc-95</div>
-      <div>abc-96</div>
-      <div>abc-97</div>
-      <div>abc-98</div>
-      <div>abc-99</div>
-      <div>abc-100</div>
-    </>
+    <div className="dashboard-container">
+
+      <div className="dashboard-top-counter-boxes">
+        <div className="counter-link-box">
+          <CounterdownNumberBox value={"949"} duration={2} label="total links" />
+        </div>
+        <div className="counter-click-box">
+          <CounterdownNumberBox value={"49494949"} duration={2} label="total clicks" />
+        </div>
+      </div>
+
+
+      <div className="chart-container">
+        <div className="line-chart-container">
+          <LineChart data={LineChartData} theme={isDarkTheme} />
+        </div>
+        <div className="bar-chart-container">
+          <div className="bar-chart-country">
+            <BarChart data={BarChartDataCountry} theme={isDarkTheme} />
+          </div>
+          <div className="bar-chart-state">
+            <BarChart data={BarChartDataState} theme={isDarkTheme} />
+          </div>
+        </div>
+        <div className="polar-area-chart-container">
+          <div className="polar-area-chart-referrer">
+            <PolarAreaChart data={polarData} theme={isDarkTheme} />
+          </div>
+          <div className="dougnut-chart-devicetype">
+            <DoughnutChart data={deviceTrafficData} theme={isDarkTheme} />
+          </div>
+        </div>
+      </div>
+
+
+    </div>
   )
 }
 

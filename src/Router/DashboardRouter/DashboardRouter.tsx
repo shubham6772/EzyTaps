@@ -1,4 +1,7 @@
 
+import { KeyMapper } from "../../KeyMapper/KeyMapper";
+import  Analytics from "../../Pages/Analytics/Analytics";
+import  BuildLinks from "../../Pages/BuildLinks/BuildLinks";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 
 export const DashboardRoutes = [
@@ -7,11 +10,19 @@ export const DashboardRoutes = [
     element: <Dashboard />,
   },
   {
-    path: "analytics",
-    element: <div>Analytics Page</div>,
+    path: KeyMapper.PremiumPages.Analytics,
+    element: <Analytics />,
   },
   {
-    path: "settings",
+    path: KeyMapper.PremiumPages.Settings,
     element: <div>Settings Page</div>,
+  },
+  {
+    path: KeyMapper.PremiumPages.BuildLinks,
+    element: <BuildLinks />,
+  },
+  {
+    path: KeyMapper.PremiumPages.Upgrade,
+    element: <div>Upgrade Plans</div>,
   },
 ];

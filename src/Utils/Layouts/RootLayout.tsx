@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import Header from "../../Componants/Header/Header";
 import { Config } from "../../config/Config";
 import { MaterialUISwitch } from "../../Componants/MUISwitch/MUISwitch";
@@ -7,28 +7,29 @@ import ArrowForwardIosRounded from "@mui/icons-material/ArrowForwardIosRounded";
 import useNavigationHook from "../../Redux/Hooks/navigationHook";
 import { Outlet } from "react-router-dom";
 import { KeyMapper } from "../../KeyMapper/KeyMapper";
-import { useAppSelector } from "../../Redux/Hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../Redux/Hooks/hooks";
+import { useToggleTheme } from "../../theme/Theme";
+import ProfileButton from "../../Componants/ProfileButton/ProfileButton";
+import { toggleProfileCard } from "../../Redux/Slices/ComponantsSlices/ProfileSlice";
+
 
 function RootLayout() {
-    const [theme, setTheme] = useState<"light" | "dark">(() => {
-        const stored = localStorage.getItem("theme");
-        return (stored === "light" || stored === "dark") ? stored : "light";
-    });
 
     const { goTo } = useNavigationHook();
+    const dispatch = useAppDispatch();
+    const { isDarkTheme } = useAppSelector((state) => state.ThemeSlice);
 
     const handleSignupClick = useCallback(() => {
         goTo(KeyMapper.Pages.Auth)
     }, [goTo])
 
-    useEffect(() => {
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-    }, [theme]);
+    const handleProfileClick = useCallback(()=>{
+        dispatch(toggleProfileCard());
+    },[dispatch])
 
-    const toggleTheme = useCallback(() => {
-        setTheme(prev => (prev === "light" ? "dark" : "light"));
-    }, []);
+
+
+    const toggleTheme = useToggleTheme();
 
     const isAuthPage = location.pathname === KeyMapper.Pages.Auth;
     const { isAuthenticated } = useAppSelector((state) => state.AuthSlice);
@@ -43,7 +44,7 @@ function RootLayout() {
                 buttons={[
                     <MaterialUISwitch
                         key="theme-switch"
-                        checked={theme === "dark"}
+                        checked={isDarkTheme}
                         onChange={toggleTheme}
                     />,
                     (!isAuthPage && !isAuthenticated) && (<ButtonComponant
@@ -54,7 +55,10 @@ function RootLayout() {
                         size="small"
                         endIcon={<ArrowForwardIosRounded />}
                         clickHandler={handleSignupClick}
-                    />)
+                    />),
+                    (!isAuthPage && isAuthenticated) && (
+                        <ProfileButton key="profile-card" clickHandler={handleProfileClick} />
+                    )
                 ]}
             />
             <main>

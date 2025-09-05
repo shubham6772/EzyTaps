@@ -1,0 +1,56 @@
+@use "../../theme/Theme.scss";
+
+.sidebar-button-wrapper {
+  position: relative; // ensures .sidebar-vertical-bar is positioned correctly
+}
+
+.sidebar-button-container {
+  padding: 8px 0px 8px 30px;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 3px;
+
+  &:hover {
+    color: var(--btn-color-selected);
+    background-color: var(--btn-background-rgba);
+
+    + .sidebar-vertical-bar {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    color: var(--btn-color-selected);
+    background-color: var(--btn-background-rgba);
+
+    + .sidebar-vertical-bar {
+      opacity: 1;
+    }
+  }
+
+  .sidebar-button-icon {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar-button-text {
+    text-transform: capitalize;
+  }
+}
+
+.sidebar-vertical-bar {
+  position: absolute;
+  right: 0; /* stick to the sidebar edge */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 2px;
+  background-color: var(--static-color-rgba);
+  opacity: 0;
+//   transition: opacity 0.2s ease;
+}
+

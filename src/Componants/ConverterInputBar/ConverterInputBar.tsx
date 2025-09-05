@@ -11,6 +11,8 @@ interface PropsModel {
     value?: string;
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
+    bold : "high" | "medium" | "small";
+    fontSize: "large" | "small" | "medium";
 }
 
 const ConverterInputBar = ({
@@ -21,6 +23,8 @@ const ConverterInputBar = ({
     value,
     startIcon,
     endIcon,
+    fontSize, 
+    bold
 }: PropsModel) => {
 
     const startAdornmentMemo = useMemo(() => {
@@ -44,7 +48,7 @@ const ConverterInputBar = ({
     return (
         <div className="converter-input-bar-container">
             <div className="converter-input-bar-and-label-container">
-                {longLable && <div className="converter-input-bar-text-label">{longLable}</div>}
+                {longLable && <div className={`converter-input-bar-text-label ${fontSize} ${`${bold}-bold`}`}>{longLable}</div>}
 
                 <TextField
                     id="converter-input"

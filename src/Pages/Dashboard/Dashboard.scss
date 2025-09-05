@@ -1,0 +1,74 @@
+@use "../../theme/Theme.scss";
+
+.dashboard-container {
+
+    .dashboard-top-counter-boxes {
+        display: flex;
+
+        .counter-link-box {
+            margin: 0px 10px 0px 0px;
+        }
+
+        .counter-click-box {
+            margin: 0px 10px;
+        }
+    }
+
+    .chart-container {
+
+        padding-top: 20px;
+
+        .line-chart-container {
+            width: 100%; // stretch full width of parent
+            height: 100%; // stretch full height of parent
+            min-height: 350px; // give it a minimum height so it doesn’t collapse
+            border: 1px solid var(--static-color-rgba);
+            padding: 20px;
+            margin-top: 30px;
+            box-sizing: border-box;
+            display: flex; // 👈 ensures canvas expands
+            border-radius: 10px;
+        }
+
+        .bar-chart-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch; // make both children stretch equally
+            gap: 20px; // spacing between charts
+            margin-top: 30px;
+
+            .bar-chart-country,
+            .bar-chart-state {
+                flex: 1; // equal width
+                min-width: 0; // prevents flexbox overflow issue
+                height: 400px; // fixed height for consistency
+                border: 1px solid var(--static-color-rgba);
+                border-radius: 10px;
+                box-sizing: border-box;
+                padding: 20px; // space inside chart
+                display: flex; // chart expands inside
+            }
+        }
+
+
+        .polar-area-chart-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch; // make both children stretch equally in height
+            gap: 20px; // spacing between charts
+            margin-top: 24px;
+
+            .polar-area-chart-referrer,
+            .dougnut-chart-devicetype {
+                flex: 1; // equal width share
+                min-width: 0; // prevent overflow shrinking issue
+                height: 400px; // control height
+                border: 1px solid var(--static-color-rgba);
+                border-radius: 10px;
+                box-sizing: border-box;
+                padding: 16px; // so chart has breathing space
+            }
+        }
+
+    }
+}

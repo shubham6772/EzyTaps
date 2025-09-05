@@ -31,7 +31,7 @@ const Landing: React.FC = () => {
 
 
           <div className="landing-converter-card">
-            <ConverterInputBar label="Your Long URL" longLable="Paste your long link here" />
+            <ConverterInputBar fontSize="large" bold="high" label="Your Long URL" longLable="Paste your long link here" />
 
             <div className="landing-demo-convert-button-container">
               {/* <div className="landing-get-link-button">

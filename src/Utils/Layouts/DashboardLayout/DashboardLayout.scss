@@ -6,19 +6,20 @@
   height: calc(100vh - 80px);
   overflow: hidden; // Changed from 'clip'
   color: var(--color);
+  background-color: var(--color-bg);
 
   .dashboard-layout-sidebar-container {
-    padding: 20px;
+    // padding-top: 20px;
     width: 250px;
     min-width: 250px; // Prevent shrinking
-    border-right: 2px solid var(--gray-btn-bg);
+    // border-right: 1px solid var(--static-color-rgba);
     height: 100%;
     overflow-y: auto;
     flex-shrink: 0; // Prevent sidebar from shrinking
   }
 
   .dashboard-layout-main-window { 
-    padding: 20px;
+    padding: 50px;
     flex: 1;
     height: 100%;
     overflow-y: auto;

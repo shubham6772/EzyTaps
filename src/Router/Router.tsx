@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Dashboard from '../Pages/Dashboard/Dashboard';
 import Landing from '../Pages/Landing/Landing';
 import Auth from '../Pages/Auth/Auth';
 import { KeyMapper } from '../KeyMapper/KeyMapper';
