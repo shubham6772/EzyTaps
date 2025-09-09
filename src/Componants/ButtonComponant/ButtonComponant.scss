@@ -1,6 +1,7 @@
-.custom-btn-componant {
+@use "../../theme/Theme.scss";
 
-    // style the MUI Button itself
+.custom-btn-componant {
+    // base styles...
     &.MuiButton-root {
         display: inline-flex;
         align-items: center;
@@ -26,34 +27,37 @@
         }
     }
 
-    // outlined variant
-    &.MuiButton-outlined {
-        border: 2px solid var(--btn-fill-clr);
-        color: var(--btn-fill-clr);
-        background-color: transparent;
-
-        &:hover {
-            border-color: var(--btn-fill-clr-hover);
-            color: var(--btn-fill-clr-hover);
-            background-color: rgba(0, 88, 221, 0.05);
-        }
-    }
-
-    // contained variant
+    // ✅ contained variant
     &.MuiButton-contained {
         background-color: var(--btn-fill-clr);
         color: var(--background-clr);
+
+        .MuiSvgIcon-root {
+            color: #fff !important;
+            fill: #fff !important;
+        }
 
         &:hover {
             background-color: var(--btn-fill-clr-hover);
         }
     }
 
-    /* ✅ Fix for icons */
-    .MuiSvgIcon-root {
-        color: #fff !important;
-        fill: #fff !important;
-        font-size: 22px;
+    // ✅ outlined variant
+    &.MuiButton-outlined {
+        border: 2px solid var(--btn-fill-clr);
+        color: var(--btn-fill-clr);
+        background-color: transparent;
+        
+        .MuiSvgIcon-root {
+            color: var(--color-primary) !important;
+            fill: var(--color-primary) !important;
+        }
+        
+        &:hover {
+            border: none;
+            color: var(--color-pure-white);
+            background-color: var(--background-container-clr);
+        }
     }
 
     .MuiButton-endIcon,

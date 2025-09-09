@@ -34,7 +34,7 @@ export const Helper = {
     },
 
     // Convert hex to rgba
-    hexToRgba: (hex: string, alpha: number = 1) =>{
+    hexToRgba: (hex: string, alpha: number = 1) => {
         hex = hex.replace("#", "");
         if (hex.length === 3) {
             hex = hex.split("").map((x) => x + x).join("");
@@ -43,7 +43,41 @@ export const Helper = {
         const g = parseInt(hex.substring(2, 4), 16);
         const b = parseInt(hex.substring(4, 6), 16);
         return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    },
+
+    extractParamFromURL: (input: string): Record<string, string> => {
+        let queryString = input;
+
+        // If the input is a full URL, extract the query string after '?'
+        const questionMarkIndex = input.indexOf("?");
+        if (questionMarkIndex !== -1) {
+            queryString = input.substring(questionMarkIndex + 1);
+        }
+
+        // Split by '&' and convert to key-value pairs
+        return queryString.split("&").reduce<Record<string, string>>((acc, param) => {
+            const [key, value] = param.split("=");
+            if (key) acc[key] = value || "";
+            return acc;
+        }, {});
+    },
+
+    isDomainExistInURL: (domainName: string, targetURL: string): boolean => {
+        if (!domainName || !targetURL) return false;
+
+        try {
+            const url = new URL(targetURL);
+            const hostname = url.hostname.toLowerCase();
+            domainName = domainName.toLowerCase();
+
+            // exact match or subdomain match
+            return hostname === domainName || hostname.endsWith(`.${domainName}`);
+        } catch (e) {
+            return false; // invalid URL
+        }
     }
+
+
 
 
 

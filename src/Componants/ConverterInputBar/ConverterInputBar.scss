@@ -25,6 +25,13 @@
 
             // input outline
             .MuiOutlinedInput-root {
+
+                &.Mui-disabled {
+                    background-color: var(--color-text-secondary);
+                    // background-color: var(--color-text-secondary);
+                    color: var(--static-black-color);
+                }
+
                 fieldset {
                     border-color: var(--color-border); // default
                 }
@@ -39,6 +46,69 @@
 
                 .MuiInputBase-input {
                     color: var(--color); // typed text color
+                }
+
+                &.small-border-radius {
+                    border-radius: 10px;
+                }
+
+                &.medium-border-radius {
+                    border-radius: 15px;
+                }
+
+                &.large-border-radius {
+                    border-radius: 20px;
+                }
+            }
+
+            // label text
+            .MuiInputLabel-root {
+                color: gray;
+
+                &.Mui-focused {
+                    color: var(--main-theme-clr);
+                }
+            }
+        }
+
+        .error-converter-textfield {
+            width: 100%;
+
+            // input outline
+            .MuiOutlinedInput-root {
+
+                &.Mui-disabled {
+                    background-color: var(--color-text-secondary);
+                    // background-color: var(--color-text-secondary);
+                    color: var(--static-black-color);
+                }
+
+                fieldset {
+                    border-color: var(--color-accent); // default
+                }
+
+                &:hover fieldset {
+                    border-color: var(--main-theme-clr); // hover
+                }
+
+                &.Mui-focused fieldset {
+                    border-color: var(--main-theme-clr); // focused
+                }
+
+                .MuiInputBase-input {
+                    color: var(--color); // typed text color
+                }
+
+                &.small-border-radius {
+                    border-radius: 10px;
+                }
+
+                &.medium-border-radius {
+                    border-radius: 15px;
+                }
+
+                &.large-border-radius {
+                    border-radius: 20px;
                 }
             }
 
@@ -92,5 +162,17 @@
 
     .small-bold {
         font-weight: 400;
+    }
+
+    .small-border-radium {
+        border-radius: 10px;
+    }
+
+    .medium-border-radium {
+        border-radius: 15px;
+    }
+
+    .larger-border-radium {
+        border-radius: 20px;
     }
 }

@@ -1,0 +1,76 @@
+@use "../../theme/Theme.scss";
+
+.plan-card-container {
+    border: 1px solid var(--static-color-rgba);
+    max-width: 300px;
+    border-radius: 10px;
+    // padding: 20px;
+
+    .plan-name {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size: 2rem;
+        padding: 10px 20px;
+        font-weight: 600;
+        background-color: var(--background-container-clr);
+        color: var(--color-pure-white);
+        text-transform: capitalize;
+    }
+
+    .filled-header {
+        background-color: var(--background-fill-orange);
+    }
+
+    .plan-info-container {
+
+        padding: 20px;
+
+        .about-plan {
+            margin: 30px 0px;
+            font-size: 0.9rem;
+            color: var(--gray-text)
+        }
+
+        .price-info-container {
+
+            display: flex;
+            gap: 5px;
+
+            .plan-price-container {
+                font-size: 3rem;
+                font-weight: 600;
+            }
+
+            .charges-type-text {
+                align-self: flex-end;
+                padding-bottom: 15px;
+            }
+
+        }
+
+        .plan-detail-about-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+
+    }
+
+    .plan-buy-button {
+        margin-top: 50px;
+    }
+
+
+    .plan-detail-point {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 10px;
+        font-size: 0.9rem;
+        margin: 5px 0px;
+
+        .detail-point-text {
+            text-transform: capitalize;
+        }
+    }
+}

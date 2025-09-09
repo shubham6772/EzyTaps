@@ -10,11 +10,12 @@
         .MuiSelect-select {
             padding: 15px 12px;
             font-size: 1rem;
+            color: var(--color);
         }
 
         // Default border color
         .MuiOutlinedInput-notchedOutline {
-            border-color: var(--gray-btn-bg);
+            border-color: var(--color-border);
         }
 
         // Hover (but not focused yet)

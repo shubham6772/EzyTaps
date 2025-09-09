@@ -5,3 +5,7 @@ import { memo } from "react";
 export const MaterialUISwitch = memo ((props: any) => {
   return <Switch className="material-switch" {...props} />;
 });
+
+export const SimpleSwitch = memo((props: any) => {
+    return <Switch className="switch-button" {...props} />
+})

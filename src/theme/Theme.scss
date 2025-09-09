@@ -3,6 +3,7 @@
 /* ------------------- Global Constant ---------------- */
 :root{
   --gray-btn-bg : #8796a5;
+  --gray-text: #576072;
   --main-theme-clr : #FFC107;
   --background-container-clr: #031f39;
   --background-container-clr-soft: #0d2f4e;
@@ -13,7 +14,9 @@
   --background-clr : #f7f4ee;
   --btn-fill-clr : #0058dd;
   --btn-fill-clr-hover : #0056b3;
+  --background-fill-orange : #f36600;
   --static-black-color : #121212;
+  --classic-green : #156c3a;
   // --static-black-color-rgba: rgba(0, 0, 0, 0.2);
   
   ;
@@ -24,13 +27,14 @@
   --static-color-rgba: rgba(0, 0, 0, 0.2);
   --color : #121212;
   --color-pure-white: #eeeeee;          /* main background */
-  --color-bg: #fafafa;          /* main background */
+  --color-bg: #f7f7f7;          /* main background */
   --color-surface: #F8F9FA;     /* cards, panels */
   --color-text-primary: #1F1F1F;/* main text */
   --color-text-secondary: #555555; /* secondary text */
   --color-primary: #4B6CB7;     /* buttons, highlights */
+  --color-primary-dark: #294a97;     /* buttons, highlights */
   --color-accent: #FF6B6B;      /* badges, small accents */
-  --color-border: #E0E0E0;      /* borders, dividers */
+  --color-border: #afafaf;      /* borders, dividers */
   --color-success: #28A745;     /* success indicators */
   --color-warning: #FFC107;     /* warnings, highlights */
 }
@@ -44,6 +48,7 @@
   --color-text-primary: #EAEAEA;/* main text */
   --color-text-secondary: #AAAAAA; /* secondary text */
   --color-primary: #4B6CB7;     /* buttons, highlights (same as light) */
+  --color-primary-dark: #294a97;     /* buttons, highlights */
   --color-accent: #FF6B6B;      /* badges, accents */
   --color-border: #FFFFFF;      /* borders, dividers */
   --color-success: #28A745;     /* success indicators */

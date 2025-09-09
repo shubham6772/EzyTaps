@@ -1,0 +1,89 @@
+@use "../../theme/Theme.scss";
+
+.analytics-card-main-container {
+    margin: 20px 0px;
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 100px;
+    background-color: var(--color-pure-white);
+    color: var(--static-black-color);
+
+    display: flex;
+    gap: 30px;
+
+    .analytics-middle-container {
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .analytics-info-container {
+
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .link-name-container {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--main-theme-clr);
+                margin-bottom: 5px;
+            }
+
+            .shorten-link-container {
+                font-size: 0.9rem;
+                color: var(--btn-fill-clr);
+                text-decoration: underline;
+                cursor: pointer;
+
+                &:hover {
+                    font-weight: 500;
+                    color: var(--color-primary-dark);
+                }
+            }
+
+            .full-url-container {
+                color: var(--gray-text);
+                font-size: 0.9rem;
+            }
+        }
+
+        .analytics-detail-container{
+
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 25px;
+
+            .engagement-container{
+                color: var(--classic-green);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+
+                span{
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    text-transform: capitalize;
+                }
+            }
+
+            .date-info-container{
+                display: flex;
+                gap : 10px;
+                justify-content: center;
+                align-items: center;
+                
+                .time-text{
+                    font-size: 0.9rem;
+                    align-self: center;
+                    font-weight: 500;
+                }
+
+            }
+        }
+
+    }
+
+}

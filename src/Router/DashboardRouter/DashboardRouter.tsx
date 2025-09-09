@@ -3,6 +3,7 @@ import { KeyMapper } from "../../KeyMapper/KeyMapper";
 import  Analytics from "../../Pages/Analytics/Analytics";
 import  BuildLinks from "../../Pages/BuildLinks/BuildLinks";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import UpgradePlan from "../../Pages/UpgradePlan/UpgradePlan";
 
 export const DashboardRoutes = [
   {
@@ -23,6 +24,6 @@ export const DashboardRoutes = [
   },
   {
     path: KeyMapper.PremiumPages.Upgrade,
-    element: <div>Upgrade Plans</div>,
+    element: <UpgradePlan />,
   },
 ];
