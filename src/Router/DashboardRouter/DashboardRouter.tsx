@@ -1,10 +1,12 @@
 
 import { KeyMapper } from "../../KeyMapper/KeyMapper";
-import  Analytics from "../../Pages/Analytics/Analytics";
-import  BuildLinks from "../../Pages/BuildLinks/BuildLinks";
-import Dashboard from "../../Pages/Dashboard/Dashboard";
-import Settings from "../../Pages/Settings/Settings";
-import UpgradePlan from "../../Pages/UpgradePlan/UpgradePlan";
+import { LazyComponent } from "../../Utils/LazyComponent/LazyComponant";
+
+const Analytics = LazyComponent(()=> import("../../Pages/Analytics/Analytics"));
+const BuildLinks = LazyComponent(()=> import("../../Pages/BuildLinks/BuildLinks"));
+const Dashboard = LazyComponent(()=> import("../../Pages/Dashboard/Dashboard"));
+const Settings = LazyComponent(()=> import("../../Pages/Settings/Settings"));
+const UpgradePlan = LazyComponent(()=> import("../../Pages/UpgradePlan/UpgradePlan"));
 
 export const DashboardRoutes = [
   {

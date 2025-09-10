@@ -1,8 +1,13 @@
-import "./Loader.scss";
-const Loader = () => {
-  return (
-    <div>Loader</div>
-  )
-}
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+import "./Loader.scss"
 
-export default Loader
+export const Loader = () => {
+  return (
+    <div className="loader-container">
+      <Box>
+        <LinearProgress />
+      </Box>
+    </div>
+  );
+}

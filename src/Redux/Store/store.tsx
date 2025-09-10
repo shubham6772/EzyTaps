@@ -4,6 +4,7 @@ import AuthSlice from "../Slices/AuthSlice"
 import ThemeSlice from "../Slices/ThemeSlice/ThemeSlice";
 import ProfileSlice from  "../Slices/ComponantsSlices/ProfileSlice"
 import BuildLinkSlice from "../Slices/BuildLinkSlice"
+import LoaderSlice from "../Slices/ComponantsSlices/LoaderSlice"
 
 export const store = configureStore({
     reducer : {
@@ -11,7 +12,8 @@ export const store = configureStore({
         AuthSlice,
         ThemeSlice,
         ProfileSlice,
-        BuildLinkSlice
+        BuildLinkSlice,
+        LoaderSlice
     }
 });
 

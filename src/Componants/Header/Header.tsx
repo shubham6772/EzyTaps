@@ -23,14 +23,16 @@ const Header: React.FC<HeaderPropsModel> = ({ brandName, buttons, customClass })
     }, []);
 
     return (
-        <div className={`header-container ${scrolled ? "scrolled" : ""} ${customClass}`}>
-            <div className="header-brand-name">
-                {brandName}
+        <>  
+            <div className={`header-container ${scrolled ? "scrolled" : ""} ${customClass}`}>
+                <div className="header-brand-name">
+                    {brandName}
+                </div>
+                <div className="header-buttons">
+                    {buttons}
+                </div>
             </div>
-            <div className="header-buttons">
-                {buttons}
-            </div>
-        </div>
+        </>
     );
 };
 

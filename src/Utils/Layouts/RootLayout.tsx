@@ -13,12 +13,14 @@ import { toggleProfileCard } from "../../Redux/Slices/ComponantsSlices/ProfileSl
 import { icons } from "../../data/iconsData";
 import NotificationButton from "../../Componants/NotificationButton/NotificationButton";
 import "./RootLayout.scss";
+import { Loader } from "../../Componants/Loader/Loader";
 
 function RootLayout() {
 
     const { goTo } = useNavigationHook();
     const dispatch = useAppDispatch();
     const { isDarkTheme } = useAppSelector((state) => state.ThemeSlice);
+    const { isLoading } = useAppSelector((state) => state.LoaderSlice)
 
     const handleSignupClick = useCallback(() => {
         goTo(KeyMapper.Pages.Auth)
@@ -38,6 +40,7 @@ function RootLayout() {
 
     return (
         <div className="layout-main-container">
+            {isLoading && <Loader />}
             {/* <div className="main-layout-content-container"></div> */}
             <Header
                 customClass={isDashboardPage ? "underline" : ""}
@@ -58,10 +61,10 @@ function RootLayout() {
                         clickHandler={handleSignupClick}
                     />),
                     (!isAuthPage && isAuthenticated) && (
-                        <>  
-                            <NotificationButton key="notification-card" />
+                        [
+                            <NotificationButton key="notification-card" />,
                             <ProfileButton key="profile-card" clickHandler={handleProfileClick} />
-                        </>
+                        ]
                     )
                 ]}
             />

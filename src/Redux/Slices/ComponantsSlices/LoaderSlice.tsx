@@ -2,23 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 import type LoaderSliceInitialStateModel from "../../../../types/slices/componantSlice/LoaderSliceModel"
 
 const initialState: LoaderSliceInitialStateModel = {
-    isLoading : false
+    isLoading: false
 }
 
 const LoaderSlice = createSlice({
-    name : "LoaderSlice",
+    name: "LoaderSlice",
     initialState,
-    reducers : {
-        toggleLoader : (state) => {
-            return {
-                ...state,
-                isLoading : !state.isLoading
-            }
-        }
-
+    reducers: {
+        setLoadingTrue: (state) => {
+            state.isLoading = true;
+        },
+        setLoadingFalse: (state) => {
+            state.isLoading = false;
+        },
     }
 })
 
 
-export const {toggleLoader} = LoaderSlice.actions;
+export const { setLoadingFalse, setLoadingTrue } = LoaderSlice.actions;
 export default LoaderSlice.reducer;

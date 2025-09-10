@@ -1,0 +1,14 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; // make sure it stays above all content
+
+  // Optional: add a subtle background behind the loader
+  background-color: transparent;
+
+  .MuiLinearProgress-root {
+    height: 4px; // adjust thickness
+  }
+}

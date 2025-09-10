@@ -1,4 +1,4 @@
-@use "./theme/Theme.scss" as *;
+@use "./theme/Theme.scss"as *;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
@@ -9,14 +9,42 @@
   // color: var(--color); /* use theme color for all text */
 }
 
-html, body {
-  background-color: var(--color-bg); /* main background */
-  transition: background-color 0.3s ease, color 0.3s ease; /* smooth theme change */
+
+/* For Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Ensure scroll still works */
+html,
+body {
+  overflow-y: scroll;
+  /* keeps scroll enabled */
+  overflow-x: hidden;
+  /* optional: hide horizontal scroll */
+  height: 100%;
+  scrollbar-width: none;
+  /* hide scrollbar */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+
+
+html,
+body {
+  background-color: var(--color-bg);
+  /* main background */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* smooth theme change */
   font-size: 16px;
 }
 
 /* Optional: ensure inputs, buttons, and placeholders follow theme too */
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   color: var(--color);
 }
 
@@ -27,9 +55,11 @@ input, textarea, select, button {
 
 /* Give enough space so content starts below fixed header */
 .page-content {
-  padding-top: 80px; /* header height + padding */
-  background-color: var(--color-bg); /* same as header */
+  padding-top: 80px;
+  /* header height + padding */
+  background-color: var(--color-bg);
+  /* same as header */
   transition: background-color 0.3s ease;
-  min-height: 100vh; /* ensure full-page background */
+  min-height: 100vh;
+  /* ensure full-page background */
 }
-
