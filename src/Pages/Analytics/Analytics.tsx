@@ -3,7 +3,7 @@ import "./Analytics.scss";
 
 let AnalyticCardData = [
   {
-    key: "sdnionsdoi",
+    id: "sdnionsdoi",
     name: "My Link",
     link: "https://abc.com/abcbc",
     fullURL: "https://google.com/anc/dnnd/sdnsd?chdd=dndf&nksdfns=sdnksd&sndoisd=bsdkjsd"
@@ -19,7 +19,7 @@ const Analytics = () => {
         {
           AnalyticCardData.map((data) => {
             return (
-              <div className="analytics-card" key={data.key}>
+              <div className="analytics-card" key={data.id}>
                 <AnalyticsCard {...data} />
               </div>
             )

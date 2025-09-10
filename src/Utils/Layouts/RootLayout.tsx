@@ -3,7 +3,6 @@ import Header from "../../Componants/Header/Header";
 import { Config } from "../../config/Config";
 import { MaterialUISwitch } from "../../Componants/MUISwitch/MUISwitch";
 import ButtonComponant from "../../Componants/ButtonComponant/ButtonComponant";
-import ArrowForwardIosRounded from "@mui/icons-material/ArrowForwardIosRounded";
 import useNavigationHook from "../../Redux/Hooks/navigationHook";
 import { Outlet } from "react-router-dom";
 import { KeyMapper } from "../../KeyMapper/KeyMapper";
@@ -11,7 +10,9 @@ import { useAppDispatch, useAppSelector } from "../../Redux/Hooks/hooks";
 import { useToggleTheme } from "../../theme/Theme";
 import ProfileButton from "../../Componants/ProfileButton/ProfileButton";
 import { toggleProfileCard } from "../../Redux/Slices/ComponantsSlices/ProfileSlice";
-
+import { icons } from "../../data/iconsData";
+import NotificationButton from "../../Componants/NotificationButton/NotificationButton";
+import "./RootLayout.scss";
 
 function RootLayout() {
 
@@ -23,9 +24,9 @@ function RootLayout() {
         goTo(KeyMapper.Pages.Auth)
     }, [goTo])
 
-    const handleProfileClick = useCallback(()=>{
+    const handleProfileClick = useCallback(() => {
         dispatch(toggleProfileCard());
-    },[dispatch])
+    }, [dispatch])
 
 
 
@@ -53,11 +54,14 @@ function RootLayout() {
                         type="contained"
                         text={"Sign In"}
                         size="small"
-                        endIcon={<ArrowForwardIosRounded />}
+                        endIcon={<icons.ArrowForwardIosRounded />}
                         clickHandler={handleSignupClick}
                     />),
                     (!isAuthPage && isAuthenticated) && (
-                        <ProfileButton key="profile-card" clickHandler={handleProfileClick} />
+                        <>  
+                            <NotificationButton key="notification-card" />
+                            <ProfileButton key="profile-card" clickHandler={handleProfileClick} />
+                        </>
                     )
                 ]}
             />

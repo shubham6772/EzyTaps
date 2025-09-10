@@ -8,10 +8,11 @@ interface propsModel {
     summary : string,
     secondSummary : string,
     recommend ?: boolean,
-    pointersList : string[]
+    pointersList : string[],
+    active ?: boolean
 }
 
-const PlanCard = ({name, amount, summary, secondSummary, pointersList, recommend}:propsModel) => {
+const PlanCard = ({name, amount, summary, secondSummary, pointersList, recommend, active}:propsModel) => {
   return (
     <div className="plan-card-container">
 
@@ -27,7 +28,7 @@ const PlanCard = ({name, amount, summary, secondSummary, pointersList, recommend
 
 
         <div className="plan-buy-button">
-          <ButtonComponant type={recommend ? "contained" : "outlined"} text="Get Started" endIcon={<icons.ArrowForwardIosRounded />} />
+          <ButtonComponant disabled={active && true} type={recommend || active ? "contained" : "outlined"} text={!active ? "Get Started" : "Current Plan"} endIcon={<icons.ArrowForwardIosRounded />} />
         </div>
 
         <div className="about-plan">{summary}</div>

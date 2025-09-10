@@ -1,0 +1,65 @@
+@use "../../theme/Theme.scss";
+
+.notification-button {
+  position: relative; // needed for absolute positioning of dropdown
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-theme-clr);
+  cursor: pointer;
+
+  &:hover .ring-icon {
+    animation: ring 0.6s ease-in-out;
+    transform-origin: top center;
+  }
+
+  // Show card on hover
+  &:hover .notification-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  15% { transform: rotate(15deg); }
+  30% { transform: rotate(-15deg); }
+  45% { transform: rotate(10deg); }
+  60% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0); }
+}
+
+// Notification card
+.notification-card {
+  position: absolute;
+  top: 120%; // just below the bell
+  right: 0;
+  border: 1px solid var(--color);
+  background-color: var(--color-bg);
+  color: var(--color);
+  box-shadow: 0 4px 12px var(--box-shadow-color);
+  border-radius: 10px;
+  width: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+
+  .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--gray-border);
+    font-size: 0.9rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: var(--btn-background-rgba);
+    }
+  }
+}

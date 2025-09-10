@@ -1,6 +1,7 @@
 @use "../../theme/Theme.scss";
 
 .custom-btn-componant {
+
     // base styles...
     &.MuiButton-root {
         display: inline-flex;
@@ -42,17 +43,24 @@
         }
     }
 
+    &.Mui-disabled {
+        background-color: var(--gray-btn-bg, #ccc) !important; // fallback if var not set
+        color: var(--gray-text, #666) !important;
+        box-shadow: none !important;
+        cursor: not-allowed;
+    }
+
     // ✅ outlined variant
     &.MuiButton-outlined {
         border: 2px solid var(--btn-fill-clr);
         color: var(--btn-fill-clr);
         background-color: transparent;
-        
+
         .MuiSvgIcon-root {
             color: var(--color-primary) !important;
             fill: var(--color-primary) !important;
         }
-        
+
         &:hover {
             border: none;
             color: var(--color-pure-white);

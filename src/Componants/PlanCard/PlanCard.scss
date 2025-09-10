@@ -39,6 +39,7 @@
             .plan-price-container {
                 font-size: 3rem;
                 font-weight: 600;
+                color: var(--color);
             }
 
             .charges-type-text {
@@ -51,6 +52,7 @@
         .plan-detail-about-text {
             font-size: 0.9rem;
             font-weight: 600;
+            color: var(--color);
         }
 
 
@@ -68,6 +70,7 @@
         gap: 10px;
         font-size: 0.9rem;
         margin: 5px 0px;
+        color: var(--color);
 
         .detail-point-text {
             text-transform: capitalize;

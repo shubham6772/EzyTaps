@@ -2,7 +2,7 @@ import { icons } from "../../data/iconsData";
 import "./AnalyticsCard.scss";
 
 interface propsModel {
-    key: string,
+    id: string,
     name: string,
     link: string,
     fullURL: string

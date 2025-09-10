@@ -3,7 +3,6 @@
 /* ------------------- Global Constant ---------------- */
 :root{
   --gray-btn-bg : #8796a5;
-  --gray-text: #576072;
   --main-theme-clr : #FFC107;
   --background-container-clr: #031f39;
   --background-container-clr-soft: #0d2f4e;
@@ -17,6 +16,7 @@
   --background-fill-orange : #f36600;
   --static-black-color : #121212;
   --classic-green : #156c3a;
+  --gray-border : #eee;
   // --static-black-color-rgba: rgba(0, 0, 0, 0.2);
   
   ;
@@ -25,7 +25,9 @@
 /* ---------------- Light Theme ---------------- */
 :root {
   --static-color-rgba: rgba(0, 0, 0, 0.2);
+  --box-shadow-color : rgba(0, 0, 0, 0.15);
   --color : #121212;
+  --gray-text: #576072;
   --color-pure-white: #eeeeee;          /* main background */
   --color-bg: #f7f7f7;          /* main background */
   --color-surface: #F8F9FA;     /* cards, panels */
@@ -42,6 +44,8 @@
 /* ---------------- Dark Theme ---------------- */
 [data-theme="dark"] {
   --color : #FFFFFF;
+  --box-shadow-color : rgba(255, 255, 255, 0.15);
+  --gray-text: #c3c6ca;
   --static-color-rgba: rgba(255, 255, 255, 0.2);
   --color-bg: #121212;          /* main background */
   --color-surface: #1E1E1E;     /* cards, panels */

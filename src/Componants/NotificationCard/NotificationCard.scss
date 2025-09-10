@@ -1,0 +1,27 @@
+@use "../../theme/Theme.scss";
+
+.notification-card-main-container{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .notification-card-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+    
+        .notification-card-title{
+            color: var(--color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    
+        .notification-card-date{
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            
+        }
+    }
+}

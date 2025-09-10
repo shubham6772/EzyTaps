@@ -1,0 +1,45 @@
+@use "../../theme/Theme.scss";
+
+.pricing-main-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0px;
+
+    .headlines-text-container{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 50px;
+
+        .pricing-headlines-text{
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color);
+        }
+
+        .pricing-headlines-subtext{
+            font-size: 1.3rem;
+            color: var(--color);
+        }
+    }
+
+
+    .pricing-card-container{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .pricing-card-list{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+    }
+}

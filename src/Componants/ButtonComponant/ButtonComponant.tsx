@@ -9,11 +9,12 @@ interface propsModel {
     size?: "small" | "large"
     clickHandler?: (event: React.MouseEvent<HTMLButtonElement>) => void
     customClassName?:    string
+    disabled ?: boolean
 }
 
-const ButtonComponant = ({ type, text, endIcon, size = "large", clickHandler = () => { }, customClassName}: propsModel) => {
+const ButtonComponant = ({ type, text, endIcon, size = "large", clickHandler = () => { }, customClassName, disabled=false}: propsModel) => {
     return (
-        <Button onClick={clickHandler} className={`custom-btn-componant ${size} ${customClassName}`} variant={type} endIcon={endIcon}>{text}</Button>
+        <Button disabled={disabled} onClick={clickHandler} className={`custom-btn-componant ${size} ${customClassName}`} variant={type} endIcon={endIcon}>{text}</Button>
     )
 }
 

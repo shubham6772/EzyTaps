@@ -7,6 +7,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 export const icons = {
     ArrowForwardIosRounded,
@@ -17,5 +18,6 @@ export const icons = {
     LinkIcon,
     BarChartIcon,
     CalendarTodayIcon,
-    CheckCircleOutlineIcon
+    CheckCircleOutlineIcon,
+    NotificationsIcon
 }

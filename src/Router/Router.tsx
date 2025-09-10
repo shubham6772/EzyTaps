@@ -30,6 +30,7 @@ const Router = () => {
           children: DashboardRoutes
         },
         {
+          index : true,
           path: KeyMapper.Pages.Landing,
           element: <Landing />
         },

@@ -3,7 +3,7 @@ export const KeyMapper = {
 
     Pages: {
         Auth: "/auth",
-        Dashboard: "/home",
+        Dashboard: "/en",
         Landing: "/",
         Error: "*",
         Pricing: "/pricing",
@@ -11,11 +11,11 @@ export const KeyMapper = {
     },
 
     PremiumPages: {
-        Dashboard: "/home",
-        Analytics: "/home/analytics",
-        BuildLinks: "/home/build-links",
-        Settings: "/home/settings",
-        Upgrade: "/home/upgrade-plan",
+        Dashboard: "/en",
+        Analytics: "/en/analytics",
+        BuildLinks: "/en/build-links",
+        Settings: "/en/settings",
+        Upgrade: "/en/upgrade-plan",
     },
 
     ExternalPages: {
